@@ -1,27 +1,75 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-  }
+
   
   img {
     max-width: 100%;
     height: auto;
   }
   
-  button {
-    margin-top: 20px;
+
+  /* Para o container do botão */
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Alinha o botão à direita */
+    margin-bottom: 20px; /* Espaço entre o botão e o restante do conteúdo */
+  }
+  
+  /* Estilo do botão */
+  .download-button {
     padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
   }
   
-  button:hover {
+  .download-button:hover {
     background-color: #45a049;
+  }
+
+  /* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* Conteúdo principal */
+  .content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Texto justificado com margens ajustadas */
+  .text {
+    text-align: justify;
+    margin: 0 20px;
+    line-height: 1.8;
+    color: #333;
+  }
+  
+  /* Estilo da imagem e legenda */
+  .image-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #000;
+  }
+  
+  .image-container figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
   }
   
