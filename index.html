@@ -20,17 +20,57 @@
         </p>
 
         <ol>
+            <h2><li>Demo:</li></h2>
            <h2><li>Conceitos Básicos</li></h2>
            <ul>
-            <li><b>Particionamento:</b>Dividir um disco físico em seções lógicas (partições) para organizar dados ou instalar diferentes sistemas operacionais.</li>
-            <li><b>Formatação:</b>Preparar uma partição para armazenar dados, aplicando um sistema de arquivos que gerencia como os dados serão gravados e lidos.</li>
+            <li class="text"><b>Particionamento:</b>Dividir um disco físico em seções lógicas (partições) para organizar dados ou instalar diferentes sistemas operacionais.</li>
+            <li class="text"><b>Formatação:</b>Preparar uma partição para armazenar dados, aplicando um sistema de arquivos que gerencia como os dados serão gravados e lidos.</li>
            </ul>
            <h2><li>Tipos de Particionamento</li></h2>
+           <ol>
+            
+            <i><b><li>MBR (Master Boot Record)</li> </i></b>
+            <ul>
+                <li class="text">Suporta até 4 partições primárias ou 3 primárias + 1 estendida.</li>
+                <li class="text">Tamanho máximo do disco: 2 TB.</li>
+                <li class="text">Compatível com sistemas mais antigos.</li>
+            </ul>
+
+            <i><b><li>GPT (GUID Partition Table)</li> </i></b>
+            <ul>
+            <li class="text">Suporta discos maiores que 2 TB.</li>
+            <li class="text">Permite até 128 partições primárias.</li>
+            <li class="text">Mais confiável, com backups redundantes da tabela de partição.</li>         
+         </ul>
+        </ol>
+        <p></p>
+         <p>Para verificar se o seu disco é GPT ou MBR, abra o Prompt de Comando como administrador e execute o comando:</p>
+         <div class="command-container">
+            <pre id="diskpart-command">diskpart</pre>
+            <button class="copy-button" onclick="copyToClipboard('diskpart-command')">Copiar código</button>
+         </div>
+         <p>Dentro do diskpart, liste os discos:</p>
+  <div class="command-container">
+    <pre id="listdisk-command">list disk</pre>
+    <button class="copy-button" onclick="copyToClipboard('listdisk-command')">Copiar código</button>
+  </div>
+  <p>Verifique a coluna GPT, se houver um asterisco (<b>*</b>) na coluna GPT, o disco é GPT, caso contrário, é MBR.</p>
+
+  <figure class="image-container">
+    <img src="imagens/tipos de disco.png" alt="Tipos de Discos">
+    <figcaption>Neste caso o disco 0 é GPT e o disco 1 é MBR.</figcaption>
+  </figure>
+
+           <h2><li>Tipos de Partições</li></h2>
+           <h2><li>Sistemas de Arquivos</li></h2>
+           <h2><li>Ferramentas para Particionamento e Formatação</li></h2>
+           <h2><li>Cuidados e Recomendações</li></h2>
+           <h2><li>Aplicações Práticas</li></h2>
         </ol>
 
         <figure class="image-container">
           <img src="imagens/c.png" alt="Minha Imagem">
-          <figcaption>Figura 1: Exemplo de imagem com legenda e borda.</figcaption>
+          <figcaption></figcaption>
         </figure>
       </div>
      

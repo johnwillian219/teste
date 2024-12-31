@@ -35,6 +35,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    text-align: justify;
+
   }
   
   /* Conteúdo principal */
@@ -61,6 +63,8 @@ body {
     margin: 20px 0;
   }
   
+  
+  
   .image-container img {
     max-width: 100%;
     height: auto;
@@ -73,3 +77,41 @@ body {
     color: #555;
   }
   
+  .image-container figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+    text-align: justify;
+  }
+  /*--------copiar comando-------------*/
+  .command-container {
+    display: flex;
+    align-items: center;
+    background-color: #d4d4d4;
+    border-left: 4px solid #323233;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: Consolas, monospace;
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    overflow-x: auto;
+  }
+
+  .command-container pre {
+    margin: 0;
+    flex: 1;
+  }
+
+  .copy-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #635d5d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .copy-button:hover {
+    background-color: #0a0a0a;
+  }

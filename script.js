@@ -10,3 +10,15 @@ function downloadPDF() {
 
     html2pdf().set(options).from(content).save(); // Gera e baixa o PDF
 }
+
+
+//enumeração das figuras
+ // Seleciona todas as figuras no documento
+ const figures = document.querySelectorAll('.image-container');
+ figures.forEach((figure, index) => {
+   const caption = figure.querySelector('figcaption');
+   if (caption) {
+     // Adiciona o número automático à legenda
+     caption.textContent = `Figura ${index + 1}: ${caption.textContent.replace(/^Figura\s*\d*:\s*/, '')}`;
+   }
+ });
