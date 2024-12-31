@@ -83,6 +83,9 @@ body {
     color: #555;
     text-align: justify;
   }
+  h1{
+    text-align: center;
+  }
   /*--------copiar comando-------------*/
   .command-container {
     display: flex;

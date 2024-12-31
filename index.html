@@ -11,9 +11,7 @@
     
      
       <div class="content">
-        <div class="button-container">
-            <button class="download-button" onclick="downloadPDF()">Baixar PDF</button>
-        </div>
+       
         <h1>Particionamento e Formatação de disco</h1>
         <p class="text">
           O <b>particionamento</b> e <b>formatação</b> de discos são etapas fundamentais na preparação de um disco para armazenamento de dados ou instalação de sistemas operacionais. Vamos abordar o tema em partes, cobrindo os conceitos, tipos de particionamento, sistemas de arquivos, ferramentas utilizadas e procedimentos práticos.
@@ -23,8 +21,8 @@
             <h2><li>Demo:</li></h2>
            <h2><li>Conceitos Básicos</li></h2>
            <ul>
-            <li class="text"><b>Particionamento:</b>Dividir um disco físico em seções lógicas (partições) para organizar dados ou instalar diferentes sistemas operacionais.</li>
-            <li class="text"><b>Formatação:</b>Preparar uma partição para armazenar dados, aplicando um sistema de arquivos que gerencia como os dados serão gravados e lidos.</li>
+            <li class="text"><b>Particionamento:</b> Dividir um disco físico em seções lógicas (partições) para organizar dados ou instalar diferentes sistemas operacionais.</li>
+            <li class="text"><b>Formatação:</b> Preparar uma partição para armazenar dados, aplicando um sistema de arquivos que gerencia como os dados serão gravados e lidos.</li>
            </ul>
            <h2><li>Tipos de Particionamento</li></h2>
            <ol>
@@ -47,13 +45,13 @@
          <p>Para verificar se o seu disco é GPT ou MBR, abra o Prompt de Comando como administrador e execute o comando:</p>
          <div class="command-container">
             <pre id="diskpart-command">diskpart</pre>
-            <button class="copy-button" onclick="copyToClipboard('diskpart-command')">Copiar código</button>
-         </div>
+            <button class="copy-button" onclick="copyToClipboard('diskpart-command', this)">Copiar código</button>
+          </div>
          <p>Dentro do diskpart, liste os discos:</p>
-  <div class="command-container">
-    <pre id="listdisk-command">list disk</pre>
-    <button class="copy-button" onclick="copyToClipboard('listdisk-command')">Copiar código</button>
-  </div>
+         <div class="command-container">
+            <pre id="listdisk-command">list disk</pre>
+            <button class="copy-button" onclick="copyToClipboard('listdisk-command', this)">Copiar código</button>
+          </div>
   <p>Verifique a coluna GPT, se houver um asterisco (<b>*</b>) na coluna GPT, o disco é GPT, caso contrário, é MBR.</p>
 
   <figure class="image-container">
@@ -61,8 +59,31 @@
     <figcaption>Neste caso o disco 0 é GPT e o disco 1 é MBR.</figcaption>
   </figure>
 
-           <h2><li>Tipos de Partições</li></h2>
+           <h2><li>Tipos de Partições</li></h2> 
+
+           <ul>
+            <li class="text"><b>Primária: </b>Contém dados ou sistemas operacionais diretamente.</li>
+            <li class="text"><b>Estendida: </b>Uma partição que contém subpartições chamadas partições lógicas.</li>
+            <li class="text"><b>Lógica: </b>Subdivisões dentro de uma partição estendida.</li>
+           </ul>
+           <figure class="image-container">
+            <img src="imagens/tipos de partição.png" alt="Tipos de Partição">
+            <figcaption>Diferentes tipos de partição nos discos</figcaption>
+          </figure>
+<p class="text">O identificador mais fácil para identificar se uma partição é primária ou estendida é verificar se a partição é inicializável ou não. Se a resposta for sim, é uma partição primária.</p>
+
            <h2><li>Sistemas de Arquivos</li></h2>
+           <p class="text">Um sistema de arquivos organiza e gerencia como os dados são armazenados e acessados em dispositivos de armazenamento, como discos e pendrives. Ele permite criar, ler e excluir arquivos, além de definir regras para organização, permissões e uso do espaço. Exemplos:</p>
+           <p></p>
+           <ul>
+            <li class="text"><b>FAT32: </b>Compatível com sistemas antigos, mas suporta arquivos de no máximo 4 GB.</li>
+            <li class="text"><b>NTFS: </b>Padrão em Windows, suporta arquivos grandes e recursos como permissões e criptografia.</li>
+            <li class="text"><b>exFAT: </b>Ideal para pendrives e dispositivos móveis, compatível com arquivos grandes.</li>
+            <li class="text"><b>ext4: </b>Padrão em sistemas Linux, eficiente e confiável.</li>
+            <li class="text"><b>APFS: </b>Sistema de arquivos da Apple, otimizado para SSDs.</li>
+
+            
+           </ul>
            <h2><li>Ferramentas para Particionamento e Formatação</li></h2>
            <h2><li>Cuidados e Recomendações</li></h2>
            <h2><li>Aplicações Práticas</li></h2>

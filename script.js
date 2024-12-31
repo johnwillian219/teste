@@ -1,19 +1,26 @@
-function downloadPDF() {
-    const content = document.querySelector('.content'); // Seleciona o conteúdo para o PDF
-    const options = {
-        margin: 1, // Margens do PDF
-        filename: 'pagina.pdf', // Nome do arquivo gerado
-        image: { type: 'jpeg', quality: 0.98 }, // Qualidade das imagens no PDF
-        html2canvas: { scale: 2 }, // Resolução
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } // Configurações do PDF
-    };
+//copiar codigo
+function copyToClipboard(elementId, button) {
+    const text = document.getElementById(elementId).innerText;
 
-    html2pdf().set(options).from(content).save(); // Gera e baixa o PDF
-}
+    // Copiar o texto para a área de transferência
+    navigator.clipboard.writeText(text).then(() => {
+      // Salvar o estado original do botão
+      const originalText = button.innerText;
+      const originalBackgroundColor = button.style.backgroundColor;
 
+      // Alterar o botão para "Código copiado" com fundo verde
+      button.innerText = "Código copiado";
+      button.style.backgroundColor = "#28a745"; // Cor verde
 
-//enumeração das figuras
- // Seleciona todas as figuras no documento
+      // Restaurar o texto e a cor original após 10 segundos
+      setTimeout(() => {
+        button.innerText = originalText;
+        button.style.backgroundColor = originalBackgroundColor;
+      }, 10000);
+    }).catch(err => console.error('Erro ao copiar:', err));
+  }
+
+//enumeração das figuras  automaticas
  const figures = document.querySelectorAll('.image-container');
  figures.forEach((figure, index) => {
    const caption = figure.querySelector('figcaption');
